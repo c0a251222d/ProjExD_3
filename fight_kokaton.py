@@ -209,7 +209,7 @@ def main():
         beams = [beam for beam in beams if beam is not None]
 
         for beam in beams:
-            beam.update(screen)
+            beam.update(screen) # コミットコメントをミスった
         for bomb in bombs:
             bomb.update(screen)
         score.update(screen)

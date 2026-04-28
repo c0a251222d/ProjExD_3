@@ -209,7 +209,7 @@ def main():
         beams = [beam for beam in beams if beam is not None]
         for i, beam in enumerate(beams):
             if check_bound(beam.rct) != (True, True):
-                beams.pop(i)
+                beams.pop(i)    # 外に出たbeamの削除
 
         for beam in beams:
             beam.update(screen)

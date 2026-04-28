@@ -149,11 +149,11 @@ class Score:
     def __init__(self):
         self.fonto = pg.font.SysFont(None, 30)
         self.score_c = 0
-        self.img = self.fonto.render(f"score:{self.score_c}", 0, (0, 0, 255))
+        self.img = self.fonto.render(f"score:{self.score_c}", 0, (0, 0, 255))   # 文字列Surfaceの生成
         self.rct = self.img.get_rect()
-        self.rct.center = 100, 600
+        self.rct.center = 100, 600  # 座標設定
 
-    def update(self, screen):
+    def update(self, screen: pg.Surface):
         self.img = self.fonto.render(f"score:{self.score_c}", 0, (0, 0, 255))
         screen.blit(self.img, self.rct.center)
 

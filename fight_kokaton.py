@@ -165,6 +165,7 @@ def main():
     bird = Bird((300, 200))
     bombs = [Bomb((255, 0, 0), 10) for _ in range(NUM_OF_BOMBS)]
     beams = []
+    # beam = None  # ゲーム初期化時にはビームは存在しない
     score = Score()
     clock = pg.time.Clock()
     tmr = 0

@@ -167,10 +167,17 @@ def main():
             return
 
         key_lst = pg.key.get_pressed()
-        bird.update(key_lst, screen)
+        if bomb is not None:
+            bird.update(key_lst, screen)
+        # 爆弾とビームの衝突判定
+        if bomb is not None:
+            if beam is not None:
+                if beam.rct.colliderect(bomb.rct):
+                    bomb, beam = None, None
         if beam != None:
-            beam.update(screen)   
-        bomb.update(screen)
+            beam.update(screen)
+        if bomb is not None:
+            bomb.update(screen)
         pg.display.update()
         tmr += 1
         clock.tick(50)
